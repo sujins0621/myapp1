@@ -1,16 +1,21 @@
 var express = require('express');
-
+var path = require('path');
 var app = express();
 
-app.get('/',function (req,res){
-  res.send("test");
-});
+//app.get('/',function (req,res){
+//  res.send("test");
+//});
+
+//app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname,'public')));
+
+//console.log(__dirname);
 
 app.listen(3000,function(){
   console.log('server on!');
 });
 
-//app.use(express.static(__dirname + '/public'));
+
 
 //app.listen(3000,function(){
 //  console.log('Server On!');
